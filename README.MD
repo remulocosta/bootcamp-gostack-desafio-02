@@ -3,22 +3,34 @@
 </h1>
 
 <h3 align="center">
-  Desafio 2: Gympoint, o início
+  Desafio 3: Gympoint, continuando a aplicação
 </h3>
 
-<blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
+<blockquote align="center">“Desafio Concluido!”!</blockquote>
 
 <p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rocketseat/bootcamp-gostack-desafio-03?color=%2304D361">
+
+  <a href="https://rocketseat.com.br">
+    <img alt="Made by remulocosta" src="https://img.shields.io/badge/made%20by-Rocketseat-%2304D361">
+  </a>
+
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
+
+  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-03/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-03?style=social">
+  </a>
 </p>
+
+<blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
 <p align="center">
   <a href="#memo-licença">Licença</a>
 </p>
 
-## :rocket: Sobre o desafio
+## Sobre o desafio
 
-A aplicação que iremos dar início ao desenvolvimento a partir de agora é um app gerenciador de academia, o **Gympoint**.
+App gerenciador de academia, o **Gympoint**.
 
 ### Um pouco sobre as ferramentas
 
@@ -34,63 +46,8 @@ Abaixo estão descritas as funcionalidades da aplicação.
 
 #### 1. Autenticação
 
-Permita que um usuário se autentique em sua aplicação utilizando e-mail e uma senha.
-
-Crie um usuário administrador utilizando a funcionalidade de [seeds do sequelize](https://sequelize.org/master/manual/migrations.html#creating-first-seed), essa funcionalidade serve para criarmos registros na base de dados de forma automatizada.
-
-Para criar um seed utilize o comando:
-
-```js
-yarn sequelize seed:generate --name admin-user
-```
-
-No arquivo gerado na pasta `src/database/seeds` adicione o código referente à criação de um usuário administrador:
-
-```js
-const bcrypt = require("bcryptjs");
-
-module.exports = {
-  up: QueryInterface => {
-    return QueryInterface.bulkInsert(
-      "users",
-      [
-        {
-          name: "Administrador",
-          email: "admin@gympoint.com",
-          password_hash: bcrypt.hashSync("123456", 8),
-          created_at: new Date(),
-          updated_at: new Date()
-        }
-      ],
-      {}
-    );
-  },
-
-  down: () => {}
-};
-```
-
-Agora execute:
-
-```js
-yarn sequelize db:seed:all
-```
-
-Agora você tem um usuário na sua base de dados, utilize esse usuário para todos logins daqui pra frente.
-
-- A autenticação deve ser feita utilizando JWT.
-- Realize a validação dos dados de entrada;
-
 #### 2. Cadastro de alunos
-
-Permita que alunos sejam mantidos (cadastrados/atualizados) na aplicação utilizando nome, email, idade, peso e altura.
-
-Utilize uma nova tabela no banco de dados chamada `students`.
-
-O cadastro de alunos só pode ser feito por administradores autenticados na aplicação.
-
-O aluno não pode se autenticar no sistema, ou seja, não possui senha.
 
 ## :memo: Licença
 
-Esse projeto está sob a licença MIT.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
